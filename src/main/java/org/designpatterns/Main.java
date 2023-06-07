@@ -1,16 +1,12 @@
 package org.designpatterns;
 
+import org.designpatterns.Builder.Car;
 import org.designpatterns.Singleton.SingleObject;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        SingleObject obj1=SingleObject.getSingleObject();
-        SingleObject obj2=SingleObject.getSingleObject();
-        SingleObject obj3=SingleObject.getSingleObject();
-        System.out.println(obj1);
-        System.out.println(obj2);
-        System.out.println(obj3);
-
+        Car obj=new Car.CarBuilder().setColor("Orange").setCompany("Buggati").setCost(10000).build();
+        System.out.println(obj.toString());
     }
 }
