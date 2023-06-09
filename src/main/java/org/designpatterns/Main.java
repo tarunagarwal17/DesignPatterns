@@ -2,13 +2,14 @@ package org.designpatterns;
 
 import org.designpatterns.Adaptor.VoltAdaptor;
 import org.designpatterns.Adaptor.VoltAdaptorImpl;
+import org.designpatterns.Facade.DeliveryManager;
+import org.designpatterns.Facade.PackageInfo;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        VoltAdaptor obj=new VoltAdaptorImpl();
-        System.out.println(obj.get3Volt());
-        System.out.println(obj.get12Volt());
-        System.out.println(obj.get120Volt());
+        PackageInfo packageInfo=new PackageInfo("large","10");
+        DeliveryManager deliveryManager=new DeliveryManager();
+        System.out.println(deliveryManager.factory(packageInfo));
     }
 }
